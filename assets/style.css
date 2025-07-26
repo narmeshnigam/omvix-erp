@@ -3,6 +3,7 @@
   --accent-orange: #FF6F40;
   --accent-red: #E25822;
   --accent-yellow: #FFD447;
+  --highlight-orange: #FFAE42;
   --btn-bg: #FFB347;
   --btn-text: #3B1F0F;
   --text-main: #1A1A1A;
@@ -17,7 +18,8 @@ body {
   color: var(--text-main);
   font-family: var(--font-family);
   line-height: 1.5;
-  padding: 40px;
+  margin: 0;
+  padding: 0;
 }
 
 .container {
@@ -68,4 +70,182 @@ input {
 .btn:hover {
   filter: brightness(110%);
   transform: scale(1.02);
+}
+
+.login-page {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  padding: 24px;
+}
+
+.logout-page {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+/* Login page */
+.login-box {
+  background: var(--card-bg);
+  padding: 48px 32px;
+  border-radius: 16px;
+  box-shadow: 0 4px 24px var(--shadow-tint);
+  max-width: 420px;
+  width: 100%;
+}
+
+.login-box h2 {
+  color: var(--accent-orange);
+  font-size: 32px;
+  font-weight: 700;
+  margin-bottom: 24px;
+  text-align: center;
+}
+
+.error-message {
+  color: var(--accent-red);
+  text-align: center;
+  margin-bottom: 16px;
+  font-size: 14px;
+}
+
+.logo-wrapper {
+  text-align: center;
+  margin-bottom: 12px;
+}
+
+.logo-wrapper img {
+  width: 100px;
+  height: auto;
+}
+
+@media (max-width: 480px) {
+  .login-box {
+    padding: 32px 24px;
+  }
+}
+
+/* Sidebar navigation */
+.sidebar {
+  width: 260px;
+  background-color: #fff;
+  box-shadow: 2px 0 10px rgba(0, 0, 0, 0.05);
+  padding: 24px 16px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  transition: left 0.3s ease;
+  z-index: 1000;
+}
+
+.sidebar .logo {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.sidebar .logo img {
+  width: 100px;
+  height: auto;
+}
+
+.sidebar nav a {
+  display: block;
+  padding: 10px 16px;
+  margin-bottom: 12px;
+  border-radius: 8px;
+  text-decoration: none;
+  color: var(--text-muted);
+  font-weight: 500;
+  transition: background 0.2s;
+}
+
+.sidebar nav a:hover {
+  background-color: var(--bg-light);
+}
+
+.logout {
+  margin-top: auto;
+}
+
+.logout a {
+  display: block;
+  padding: 10px 16px;
+  border-radius: 8px;
+  text-decoration: none;
+  background-color: var(--accent-orange);
+  color: #fff;
+  text-align: center;
+  font-weight: 600;
+}
+
+.main-content {
+  margin-left: 260px;
+  padding: 40px 32px;
+  flex: 1;
+}
+
+.sidebar-toggle {
+  position: fixed;
+  top: 16px;
+  left: 16px;
+  background-color: var(--accent-orange);
+  color: #fff;
+  font-size: 20px;
+  line-height: 1;
+  border: none;
+  border-radius: 6px;
+  padding: 8px 12px;
+  z-index: 1100;
+  display: none;
+  width: auto;
+  height: auto;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  cursor: pointer;
+}
+
+@media (max-width: 768px) {
+  .sidebar {
+    left: -260px;
+  }
+
+  .sidebar.open {
+    left: 0;
+  }
+
+  .main-content {
+    margin-left: 0;
+    padding-top: 80px;
+  }
+
+  .sidebar-toggle {
+    display: block;
+  }
+}
+
+/* Logout page */
+.logout-message {
+  text-align: center;
+  background: #ffffff;
+  padding: 40px;
+  border-radius: 16px;
+  box-shadow: 0 8px 24px rgba(255, 111, 64, 0.15);
+  max-width: 400px;
+  margin: auto;
+}
+
+.logout-message h2 {
+  color: #FF6F40;
+  font-size: 24px;
+  margin-bottom: 12px;
+}
+
+.logout-message p {
+  font-size: 15px;
 }
