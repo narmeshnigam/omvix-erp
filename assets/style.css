@@ -1,0 +1,71 @@
+:root {
+  --bg-light: #FFF8F0;
+  --accent-orange: #FF6F40;
+  --accent-red: #E25822;
+  --accent-yellow: #FFD447;
+  --btn-bg: #FFB347;
+  --btn-text: #3B1F0F;
+  --text-main: #1A1A1A;
+  --text-muted: #5A4033;
+  --card-bg: #FFF1E5;
+  --shadow-tint: rgba(255, 111, 64, 0.2);
+  --font-family: 'Inter', sans-serif;
+}
+
+body {
+  background-color: var(--bg-light);
+  color: var(--text-main);
+  font-family: var(--font-family);
+  line-height: 1.5;
+  padding: 40px;
+}
+
+.container {
+  max-width: 1280px;
+  margin: auto;
+  padding: 48px 24px;
+}
+
+.form-box {
+  background: var(--card-bg);
+  padding: 32px;
+  border-radius: 16px;
+  box-shadow: 0 4px 20px var(--shadow-tint);
+  max-width: 480px;
+  margin: auto;
+}
+
+.form-group {
+  margin-bottom: 24px;
+}
+label {
+  display: block;
+  margin-bottom: 8px;
+  color: var(--text-muted);
+}
+input {
+  width: 100%;
+  padding: 12px;
+  border-radius: 8px;
+  border: 1px solid var(--accent-orange);
+  background: transparent;
+  color: var(--text-muted);
+  font-size: 16px;
+}
+
+.btn {
+  background: var(--btn-bg);
+  color: var(--btn-text);
+  padding: 16px 32px;
+  border-radius: 12px;
+  font-weight: 600;
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: inline-block;
+  font-size: 16px;
+}
+.btn:hover {
+  filter: brightness(110%);
+  transform: scale(1.02);
+}
