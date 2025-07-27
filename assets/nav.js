@@ -6,7 +6,12 @@ function toggleSidebar() {
 
 function loadNavigation() {
   fetch('includes/nav.html')
-    .then(res => res.text())
+    .then(res => {
+      if (res.ok) {
+        return res.text();
+      }
+      return fetch('../includes/nav.html').then(r => r.text());
+    })
     .then(html => {
       document.getElementById('nav-container').innerHTML = html;
     });

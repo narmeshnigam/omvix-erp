@@ -5,96 +5,26 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Employee Listing – Omvix</title>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-  <style>
-    :root {
-      --bg-light: #FFF8F0;
-      --accent-orange: #FF6F40;
-      --accent-red: #E25822;
-      --accent-yellow: #FFD447;
-      --btn-bg: #FFB347;
-      --btn-text: #3B1F0F;
-      --text-main: #1A1A1A;
-      --text-muted: #5A4033;
-      --card-bg: #FFF1E5;
-      --shadow-tint: rgba(255, 111, 64, 0.2);
-      --font-family: 'Inter', sans-serif;
-    }
-    * { box-sizing: border-box; margin: 0; padding: 0; }
-    body {
-      background-color: var(--bg-light);
-      color: var(--text-main);
-      font-family: var(--font-family);
-      line-height: 1.5;
-    }
-    .container {
-      max-width: 1280px;
-      margin: auto;
-      padding: 48px 24px;
-    }
-    h2 { font-size: 36px; font-weight: 600; margin-bottom: 24px; }
-    .btn {
-      background: var(--btn-bg);
-      color: var(--btn-text);
-      padding: 16px 32px;
-      border-radius: 12px;
-      font-weight: 600;
-      border: none;
-      cursor: pointer;
-      transition: all 0.3s ease;
-      text-decoration: none;
-      display: inline-block;
-    }
-    .btn:hover {
-      filter: brightness(110%);
-      transform: scale(1.02);
-    }
-    .card {
-      background: var(--card-bg);
-      padding: 24px;
-      border-radius: 16px;
-      box-shadow: 0 4px 20px var(--shadow-tint);
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
-    }
-    table {
-      width: 100%;
-      border-collapse: collapse;
-      margin-top: 16px;
-    }
-    th, td {
-      padding: 12px;
-      border: 1px solid var(--accent-orange);
-      color: var(--text-muted);
-      text-align: left;
-      vertical-align: middle;
-    }
-    th {
-      background: var(--card-bg);
-      color: var(--accent-red);
-      font-weight: 600;
-    }
-    input, select {
-      font-family: var(--font-family);
-      font-size: 16px;
-      color: var(--text-muted);
-    }
-  </style>
+  <link rel="stylesheet" href="../assets/style.css">
 </head>
-<body>
+<body class="sidebar-layout">
+<div id="nav-container"></div>
+<div class="main-content">
 <main class="container">
-  <h2>Employees</h2>
-  <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 24px; flex-wrap: wrap; gap: 16px;">
-    <p style="color: var(--text-muted);">Manage your current staff and their details.</p>
-    <a href="/employees/add.html" class="btn">+ Add Employee</a>
+  <h2 class="page-title">Employees</h2>
+  <div class="list-header">
+    <p class="text-muted">Manage your current staff and their details.</p>
+    <a href="add.html" class="btn">+ Add Employee</a>
   </div>
 
-  <div style="display: flex; flex-wrap: wrap; gap: 16px; margin-bottom: 24px;">
-    <input type="text" placeholder="Search by name or email" style="flex: 1; padding: 12px; border: 1px solid var(--accent-orange); border-radius: 8px; color: var(--text-muted); background: transparent;" />
-    <select style="padding: 12px; border: 1px solid var(--accent-orange); border-radius: 8px; background: transparent; color: var(--text-muted);">
+  <div class="filter-bar">
+    <input type="text" placeholder="Search by name or email" class="search-input" />
+    <select class="filter-select">
       <option value="">All Roles</option>
       <option value="Admin">Admin</option>
       <option value="Staff">Staff</option>
     </select>
-    <select style="padding: 12px; border: 1px solid var(--accent-orange); border-radius: 8px; background: transparent; color: var(--text-muted);">
+    <select class="filter-select">
       <option value="">All Status</option>
       <option value="Active">Active</option>
       <option value="Inactive">Inactive</option>
@@ -117,23 +47,25 @@
       <tbody>
         <tr>
           <td>
-            <img src="https://via.placeholder.com/40" alt="Profile" style="border-radius: 50%; width: 40px; height: 40px; object-fit: cover;" />
+            <img src="https://via.placeholder.com/40" alt="Profile" class="profile-pic" />
           </td>
           <td>Ritika Sharma</td>
           <td>ritika.sharma@omvix.com</td>
           <td>HR Executive</td>
           <td>Human Resources</td>
           <td>
-            <span style="background: #DFF5E1; color: green; padding: 6px 12px; border-radius: 8px; font-weight: 500; display: inline-block;">Active</span>
+            <span class="status-badge status-active">Active</span>
           </td>
-          <td>
-            <a href="/employees/edit/1" style="margin-right: 12px; color: var(--accent-orange); font-weight: 600; text-decoration: none;">Edit</a>
-            <a href="/employees/delete/1" style="color: crimson; font-weight: 600; text-decoration: none;">Delete</a>
+          <td class="table-actions">
+            <a href="edit.html">Edit</a>
+            <a href="#" class="delete">Delete</a>
           </td>
         </tr>
       </tbody>
     </table>
   </div>
 </main>
+</div>
+<script src="../assets/nav.js"></script>
 </body>
 </html>
