@@ -245,13 +245,14 @@ button:hover {
   cursor: pointer;
 }
 .main-content {
-  margin-left: 260px;
-  padding: 40px 32px;
+  margin-left: 300px;
+  padding: 40px 48px;
   flex: 1;
 }
 @media (max-width: 768px) {
   .sidebar {
-    left: -260px;
+    left: -300px;
+    border-right: 1px solid #e0d7cf; /* subtle border for separation */
   }
   .sidebar.open {
     left: 0;
@@ -267,15 +268,18 @@ button:hover {
 
 /* Change password form */
 .change-password-form {
-  max-width: 400px;
+  max-width: 420px;
   background: #fff;
   padding: 24px;
   border-radius: 16px;
   box-shadow: 0 6px 18px rgba(0, 0, 0, 0.05);
 }
 .change-password-form input[type="password"] {
+  margin-left: 10px;
+  margin-right: 10px;
   margin-bottom: 20px;
   font-size: 15px;
+  width: calc(100% - 50px);
 }
 
 /* Logout message */
