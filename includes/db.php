@@ -1,8 +1,8 @@
 <?php
 $host = 'localhost';
-$db   = 'u348991914_orgTestDB';
-$user = 'u348991914_orgtestdb';
-$pass = '8h;jbovE$FO'; // Replace with actual
+$db   = 'omvix_erp'; // Replace with actual database name
+$user = 'root';
+$pass = ''; // Replace with actual
 
 $conn = new mysqli($host, $user, $pass, $db);
 if ($conn->connect_error) {
