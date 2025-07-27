@@ -5,82 +5,13 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Add Employee – Omvix</title>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-  <style>
-    :root {
-      --bg-light: #FFF8F0;
-      --accent-orange: #FF6F40;
-      --accent-red: #E25822;
-      --accent-yellow: #FFD447;
-      --btn-bg: #FFB347;
-      --btn-text: #3B1F0F;
-      --text-main: #1A1A1A;
-      --text-muted: #5A4033;
-      --card-bg: #FFF1E5;
-      --shadow-tint: rgba(255, 111, 64, 0.2);
-      --font-family: 'Inter', sans-serif;
-    }
-    * { box-sizing: border-box; margin: 0; padding: 0; }
-    body {
-      background-color: var(--bg-light);
-      color: var(--text-main);
-      font-family: var(--font-family);
-      line-height: 1.5;
-    }
-    .container {
-      max-width: 640px;
-      margin: auto;
-      padding: 48px 24px;
-    }
-    h2 { font-size: 36px; font-weight: 600; margin-bottom: 32px; }
-    .form-box {
-      background: var(--card-bg);
-      padding: 32px;
-      border-radius: 16px;
-      box-shadow: 0 4px 20px var(--shadow-tint);
-    }
-    .form-group {
-      margin-bottom: 24px;
-    }
-    label {
-      display: block;
-      margin-bottom: 8px;
-      font-weight: 500;
-      color: var(--text-muted);
-    }
-    input, select {
-      width: 100%;
-      padding: 12px;
-      border: 1px solid var(--accent-orange);
-      border-radius: 8px;
-      background: transparent;
-      color: var(--text-muted);
-      font-family: var(--font-family);
-    }
-    .radio-group {
-      display: flex;
-      gap: 24px;
-    }
-    .btn {
-      background: var(--btn-bg);
-      color: var(--btn-text);
-      padding: 16px 32px;
-      border-radius: 12px;
-      font-weight: 600;
-      border: none;
-      cursor: pointer;
-      transition: all 0.3s ease;
-      text-decoration: none;
-      display: inline-block;
-    }
-    .btn:hover {
-      filter: brightness(110%);
-      transform: scale(1.02);
-    }
-  </style>
+  <link rel="stylesheet" href="../assets/style.css">
 </head>
-<body>
-<main class="container">
-  <h2>Add Employee</h2>
+<body class="sidebar-layout">
+<div id="nav-container"></div>
+<div class="main-content">
+<main class="narrow-container">
+  <h2 class="page-title">Add Employee</h2>
   <div class="form-box">
     <form method="post" enctype="multipart/form-data">
       <div class="form-group">
@@ -130,5 +61,7 @@
     </form>
   </div>
 </main>
+</div>
+<script src="../assets/nav.js"></script>
 </body>
 </html>
