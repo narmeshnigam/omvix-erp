@@ -17,7 +17,7 @@ if (!isset($_SESSION['user_id'])) {
 </head>
 <body class="sidebar-layout">
 
-<?php include 'includes/nav.php'; ?>
+<div id="nav-container"></div>
 
 <!-- Main Content -->
 <div class="main-content">
@@ -25,6 +25,6 @@ if (!isset($_SESSION['user_id'])) {
   <p>This is your dashboard. From here, you can manage all operations and access ERP modules as they are built.</p>
 </div>
 
-
+<script src="assets/nav.js"></script>
 </body>
 </html>

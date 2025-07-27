@@ -17,7 +17,7 @@ if (!isset($_SESSION['user_id'])) {
 </head>
 <body class="sidebar-layout">
 
-<?php include 'includes/nav.php'; ?>
+<div id="nav-container"></div>
 
 <!-- Main Content -->
 <div class="main-content">
@@ -38,5 +38,6 @@ if (!isset($_SESSION['user_id'])) {
 
 
 
+<script src="assets/nav.js"></script>
 </body>
 </html>
