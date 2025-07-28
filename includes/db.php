@@ -1,6 +1,6 @@
 <?php
 $host = 'localhost';
-$db   = 'omvix_erp'; // Replace with actual database name
+$db   = 'omvix_erp';
 $user = 'root';
 $pass = ''; // Replace with actual
 
