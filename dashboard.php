@@ -1,6 +1,6 @@
 <?php
 session_start();
-include __DIR__ . '/includes/config.php';
+include_once 'includes/config.php';
 if (!isset($_SESSION['user_id'])) {
   header("Location: {$BASE_URL}login.php");
   exit();
@@ -25,6 +25,9 @@ if (!isset($_SESSION['user_id'])) {
   <h1>Welcome to Omvix ERP</h1>
   <p>This is your dashboard. From here, you can manage all operations and access ERP modules as they are built.</p>
 </div>
+<script>
+  const BASE_URL = "<?= $BASE_URL ?>";
+</script>
 <script src="<?= $BASE_URL ?>assets/nav.js"></script>
 </body>
 </html>
