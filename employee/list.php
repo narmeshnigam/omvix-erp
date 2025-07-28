@@ -42,7 +42,7 @@ $result = mysqli_stmt_get_result($stmt);
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Employee Listing – Omvix</title>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="../assets/style.css">
+  <link rel="stylesheet" href="/assets/style.css">
 </head>
 <body class="sidebar-layout">
 <div id="nav-container"></div>
@@ -120,6 +120,6 @@ $result = mysqli_stmt_get_result($stmt);
   </div>
 </main>
 </div>
-<script src="../assets/nav.js"></script>
+<script src="/assets/nav.js"></script>
 </body>
 </html>
