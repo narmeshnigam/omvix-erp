@@ -5,7 +5,7 @@ function toggleSidebar() {
 }
 
 function loadNavigation() {
-  fetch('/includes/nav.html')
+  fetch('../includes/nav.php')
     .then(res => res.text())
     .then(html => {
       document.getElementById('nav-container').innerHTML = html;

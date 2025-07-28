@@ -1,4 +1,5 @@
 <?php
+include '../includes/config.php';
 include '../includes/db.php';
 
 $msg = '';
@@ -27,7 +28,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
   mysqli_stmt_bind_param($stmt, 'sssssssss', $name, $personal_email, $office_email, $personal_phone, $office_phone, $role, $department, $status, $profile_picture);
 
   if (mysqli_stmt_execute($stmt)) {
-    header("Location: list.php?msg=added");
+    header("Location: {$BASE_URL}employee/list.php?msg=added");
     exit;
   } else {
     $msg = 'Error saving employee.';
@@ -41,7 +42,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Add Employee – Omvix</title>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="/assets/style.css">
+    <link rel="stylesheet" href="<?= $BASE_URL ?>assets/style.css">
 </head>
 <body class="sidebar-layout">
 <div id="nav-container"></div>
@@ -101,6 +102,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
   </div>
 </main>
 </div>
-  <script src="/assets/nav.js"></script>
+  <script src="<?= $BASE_URL ?>assets/nav.js"></script>
 </body>
 </html>

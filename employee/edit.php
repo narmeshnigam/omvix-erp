@@ -1,8 +1,9 @@
 <?php
+include '../includes/config.php';
 include '../includes/db.php';
 
 if (!isset($_GET['id']) || !is_numeric($_GET['id'])) {
-  header("Location: list.php?msg=invalid");
+  header("Location: {$BASE_URL}employee/list.php?msg=invalid");
   exit;
 }
 
@@ -17,7 +18,7 @@ mysqli_stmt_execute($stmt);
 $result = mysqli_stmt_get_result($stmt);
 
 if (mysqli_num_rows($result) === 0) {
-  header("Location: list.php?msg=invalid");
+  header("Location: {$BASE_URL}employee/list.php?msg=invalid");
   exit;
 }
 
@@ -47,7 +48,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
   mysqli_stmt_bind_param($stmt, 'sssssssssi', $name, $personal_email, $office_email, $personal_phone, $office_phone, $role, $department, $status, $profile_picture, $id);
 
   if (mysqli_stmt_execute($stmt)) {
-    header("Location: list.php?msg=updated");
+    header("Location: {$BASE_URL}employee/list.php?msg=updated");
     exit;
   } else {
     $msg = 'Error updating employee.';
@@ -61,7 +62,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Edit Employee – Omvix</title>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="/assets/style.css">
+    <link rel="stylesheet" href="<?= $BASE_URL ?>assets/style.css">
 </head>
 <body class="sidebar-layout">
 <div id="nav-container"></div>
@@ -121,6 +122,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
   </div>
 </main>
 </div>
-  <script src="/assets/nav.js"></script>
+  <script src="<?= $BASE_URL ?>assets/nav.js"></script>
 </body>
 </html>
