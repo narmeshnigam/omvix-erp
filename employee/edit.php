@@ -38,7 +38,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $filename = time() . '_' . basename($_FILES['profile_picture']['name']);
     $target_path = __DIR__ . '/profile-pictures/' . $filename;
     if (move_uploaded_file($_FILES['profile_picture']['tmp_name'], $target_path)) {
-      $profile_picture = 'employee/profile-pictures/' . $filename;
+      $profile_picture = 'profile-pictures/' . $filename;
     }
   }
 
