@@ -13,7 +13,7 @@ if (!isset($_SESSION['user_id'])) {
   <title>Change Password – Omvix ERP</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="assets/style.css">
+  <link rel="stylesheet" href="/assets/style.css">
 </head>
 <body class="sidebar-layout">
 
@@ -38,6 +38,6 @@ if (!isset($_SESSION['user_id'])) {
 
 
 
-<script src="assets/nav.js"></script>
+<script src="/assets/nav.js"></script>
 </body>
 </html>
