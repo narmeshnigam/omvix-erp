@@ -5,10 +5,23 @@ function toggleSidebar() {
 }
 
 function loadNavigation() {
-  fetch('../includes/nav.php')
-    .then(res => res.text())
+  if (typeof BASE_URL === 'undefined') {
+    console.error("BASE_URL is not defined.");
+    return;
+  }
+
+  fetch(BASE_URL + 'includes/nav.php')
+    .then(res => {
+      if (!res.ok) {
+        throw new Error(`Failed to load nav: ${res.status}`);
+      }
+      return res.text();
+    })
     .then(html => {
       document.getElementById('nav-container').innerHTML = html;
+    })
+    .catch(err => {
+      console.error(err);
     });
 }
 

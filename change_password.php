@@ -1,6 +1,6 @@
 <?php
 session_start();
-include __DIR__ . '/includes/config.php';
+include_once 'includes/config.php';
 if (!isset($_SESSION['user_id'])) {
   header("Location: {$BASE_URL}login.php");
   exit();
@@ -33,12 +33,13 @@ if (!isset($_SESSION['user_id'])) {
     <label for="confirm_password">Confirm New Password</label>
     <input type="password" id="confirm_password" name="confirm_password" required>
 
-    <button type="submit">Update Password</button>
+  <button type="submit">Update Password</button>
   </form>
 </div>
 
-
-
+<script>
+  const BASE_URL = "<?= $BASE_URL ?>";
+</script>
 <script src="<?= $BASE_URL ?>assets/nav.js"></script>
 </body>
 </html>
