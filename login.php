@@ -1,5 +1,6 @@
 <?php
 session_start();
+require_once 'includes/config.php';
 require_once 'includes/db.php';
 
 $email = $_POST['email'];
@@ -16,12 +17,12 @@ if ($user = $result->fetch_assoc()) {
         $_SESSION['user_id'] = $user['id'];
         $_SESSION['user_name'] = $user['name'];
         $_SESSION['user_role'] = $user['role'];
-        header("Location: dashboard.php");
+        header("Location: {$BASE_URL}dashboard.php");
         exit();
     }
 }
 
 $_SESSION['error'] = "Invalid email or password.";
-header("Location: index.php");
+header("Location: {$BASE_URL}index.php");
 exit();
 ?>

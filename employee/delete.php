@@ -1,8 +1,9 @@
 <?php
+include '../includes/config.php';
 include '../includes/db.php';
 
 if (!isset($_GET['id']) || !is_numeric($_GET['id'])) {
-  header("Location: list.php?msg=invalid");
+  header("Location: {$BASE_URL}employee/list.php?msg=invalid");
   exit;
 }
 
@@ -16,7 +17,7 @@ mysqli_stmt_execute($checkStmt);
 mysqli_stmt_store_result($checkStmt);
 
 if (mysqli_stmt_num_rows($checkStmt) === 0) {
-  header("Location: list.php?msg=invalid");
+  header("Location: {$BASE_URL}employee/list.php?msg=invalid");
   exit;
 }
 
@@ -26,8 +27,8 @@ $deleteStmt = mysqli_prepare($conn, $deleteQuery);
 mysqli_stmt_bind_param($deleteStmt, 'si', $now, $id);
 
 if (mysqli_stmt_execute($deleteStmt)) {
-  header("Location: list.php?msg=deleted");
+  header("Location: {$BASE_URL}employee/list.php?msg=deleted");
 } else {
-  header("Location: list.php?msg=error");
+  header("Location: {$BASE_URL}employee/list.php?msg=error");
 }
 exit;

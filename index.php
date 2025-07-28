@@ -1,4 +1,5 @@
 
+<?php include __DIR__ . '/includes/config.php'; ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -6,12 +7,12 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Login – Omvix ERP</title>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="/assets/style.css">
+  <link rel="stylesheet" href="<?= $BASE_URL ?>assets/style.css">
 </head>
 <body class="login-page">
   <div class="login-box">
       <div class="logo-wrapper">
-<center><img src="/assets/omvix_logo.png" alt="Omvix ERP" /></center>
+<center><img src="<?= $BASE_URL ?>assets/omvix_logo.png" alt="Omvix ERP" /></center>
 </div>
 <h2>ERP Login</h2>
         <form action="login.php" method="POST">
