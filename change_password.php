@@ -38,6 +38,6 @@ if (!isset($_SESSION['user_id'])) {
 
 
 
-<script src="/assets/nav.js"></script>
+<script src="assets/nav.js"></script>
 </body>
 </html>

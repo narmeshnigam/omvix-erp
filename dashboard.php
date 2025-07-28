@@ -24,6 +24,6 @@ if (!isset($_SESSION['user_id'])) {
   <h1>Welcome to Omvix ERP</h1>
   <p>This is your dashboard. From here, you can manage all operations and access ERP modules as they are built.</p>
 </div>
-<script src="/assets/nav.js"></script>
+<script src="assets/nav.js"></script>
 </body>
 </html>
