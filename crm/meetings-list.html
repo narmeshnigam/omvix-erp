@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Demo Booking Manager - Omvix CRM</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg-light: #FFF8F0;
+      --accent-orange: #FF6F40;
+      --accent-red: #E25822;
+      --text-muted: #5A4033;
+      --card-bg: #FFF1E5;
+      --shadow-tint: rgba(255, 111, 64, 0.2);
+      --font-family: 'Inter', sans-serif;
+    }
+
+    body {
+      font-family: var(--font-family);
+      background: var(--bg-light);
+      margin: 0;
+      padding: 24px;
+      color: var(--text-muted);
+    }
+
+    h1 {
+      font-size: 32px;
+      font-weight: 700;
+      margin-bottom: 24px;
+      color: var(--accent-red);
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-bottom: 24px;
+    }
+
+    th, td {
+      border: 1px solid var(--accent-orange);
+      padding: 12px;
+      text-align: left;
+    }
+
+    th {
+      background: var(--card-bg);
+      color: var(--accent-red);
+    }
+
+    .btn {
+      background: var(--accent-orange);
+      color: white;
+      padding: 8px 14px;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      font-size: 13px;
+    }
+
+    .btn:hover {
+      filter: brightness(1.1);
+    }
+
+    .modal {
+      display: none;
+      position: fixed;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      background: rgba(0, 0, 0, 0.4);
+      justify-content: center;
+      align-items: center;
+    }
+
+    .modal-content {
+      background: var(--card-bg);
+      padding: 24px;
+      border-radius: 12px;
+      max-width: 600px;
+      width: 90%;
+      box-shadow: 0 4px 20px var(--shadow-tint);
+    }
+
+    .modal h2 {
+      margin-top: 0;
+      color: var(--accent-orange);
+    }
+
+    .form-group {
+      margin-bottom: 16px;
+    }
+
+    label {
+      font-weight: 500;
+      display: block;
+      margin-bottom: 6px;
+      color: var(--accent-red);
+    }
+
+    textarea, select, input[type="datetime-local"] {
+      width: 100%;
+      padding: 10px;
+      border: 1px solid var(--accent-orange);
+      border-radius: 8px;
+      background: transparent;
+      color: var(--text-muted);
+    }
+  </style>
+</head>
+<body>
+  <h1>Demo Booking Manager</h1>
+
+  <table>
+    <thead>
+      <tr>
+        <th>Lead</th>
+        <th>Date</th>
+        <th>Mode</th>
+        <th>Status</th>
+        <th>Assigned To</th>
+        <th>Action</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Ravi Sharma</td>
+        <td>2025-08-01 14:00</td>
+        <td>Site Visit</td>
+        <td>Booked</td>
+        <td>Lokesh Sharma</td>
+        <td><button class="btn" onclick="openModal()">Update</button></td>
+      </tr>
+    </tbody>
+  </table>
+
+  <!-- Modal -->
+  <div class="modal" id="modal">
+    <div class="modal-content">
+      <h2>Update Demo Booking</h2>
+      <div class="form-group">
+        <label for="status">Status</label>
+        <select id="status">
+          <option>Booked</option>
+          <option>Completed</option>
+          <option>Missed</option>
+          <option>Cancelled</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label for="pre">Pre-Demo Instructions</label>
+        <textarea id="pre" rows="2"></textarea>
+      </div>
+      <div class="form-group">
+        <label for="post">Post-Demo Summary</label>
+        <textarea id="post" rows="3"></textarea>
+      </div>
+      <div class="form-group">
+        <label for="next">Next Meeting Required?</label>
+        <select id="next" onchange="toggleNext(this.value)">
+          <option value="no">No</option>
+          <option value="yes">Yes</option>
+        </select>
+      </div>
+      <div id="next-fields" style="display:none">
+        <div class="form-group">
+          <label for="next-date">Next Date</label>
+          <input type="datetime-local" id="next-date">
+        </div>
+        <div class="form-group">
+          <label for="next-mode">Mode</label>
+          <select id="next-mode">
+            <option>Call</option>
+            <option>WhatsApp</option>
+            <option>Online Video</option>
+            <option>Site Visit</option>
+          </select>
+        </div>
+      </div>
+      <button class="btn" onclick="closeModal()">Save</button>
+    </div>
+  </div>
+
+  <script>
+    function openModal() {
+      document.getElementById('modal').style.display = 'flex';
+    }
+    function closeModal() {
+      document.getElementById('modal').style.display = 'none';
+    }
+    function toggleNext(value) {
+      document.getElementById('next-fields').style.display = value === 'yes' ? 'block' : 'none';
+    }
+  </script>
+</body>
+</html>

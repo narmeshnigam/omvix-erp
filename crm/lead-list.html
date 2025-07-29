@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lead List - Omvix CRM</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg-light: #FFF8F0;
+      --accent-orange: #FF6F40;
+      --accent-red: #E25822;
+      --text-muted: #5A4033;
+      --card-bg: #FFF1E5;
+      --shadow-tint: rgba(255, 111, 64, 0.2);
+      --font-family: 'Inter', sans-serif;
+    }
+
+    body {
+      font-family: var(--font-family);
+      background: var(--bg-light);
+      margin: 0;
+      padding: 24px;
+      color: var(--text-muted);
+    }
+
+    h1 {
+      font-size: 32px;
+      font-weight: 700;
+      margin-bottom: 24px;
+      color: var(--accent-red);
+    }
+
+    .filters {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 16px;
+      margin-bottom: 24px;
+    }
+
+    input, select {
+      padding: 10px;
+      border: 1px solid var(--accent-orange);
+      border-radius: 8px;
+      font-size: 14px;
+      background: transparent;
+      color: var(--text-muted);
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 16px;
+    }
+
+    th, td {
+      border: 1px solid var(--accent-orange);
+      padding: 12px;
+      text-align: left;
+    }
+
+    th {
+      background: var(--card-bg);
+      color: var(--accent-red);
+    }
+
+    .action-btns button {
+      background: var(--accent-orange);
+      color: white;
+      border: none;
+      padding: 8px 12px;
+      margin-right: 6px;
+      border-radius: 6px;
+      cursor: pointer;
+      font-size: 13px;
+    }
+
+    .action-btns button:hover {
+      filter: brightness(1.1);
+    }
+  </style>
+</head>
+<body>
+  <h1>Lead List</h1>
+
+  <div class="filters">
+    <input type="text" placeholder="Search name/email/phone...">
+    <select>
+      <option>Status</option>
+      <option>New</option>
+      <option>Contacted</option>
+      <option>Interested</option>
+      <option>Converted</option>
+      <option>Dropped</option>
+    </select>
+    <select>
+      <option>Type</option>
+      <option>Customer</option>
+      <option>Partner</option>
+      <option>Service Provider</option>
+    </select>
+    <select>
+      <option>Sub-Type</option>
+      <option>Individual</option>
+      <option>Builder</option>
+      <option>Architect</option>
+      <option>Institution</option>
+      <option>Electrical Contractor</option>
+    </select>
+    <select>
+      <option>Source</option>
+      <option>Website</option>
+      <option>Ad</option>
+      <option>Referral</option>
+      <option>Walk-in</option>
+      <option>Campaign</option>
+      <option>Manual</option>
+    </select>
+  </div>
+
+  <table>
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Phone</th>
+        <th>Type</th>
+        <th>Sub-Type</th>
+        <th>Interested In</th>
+        <th>Status</th>
+        <th>Assigned To</th>
+        <th>Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Ravi Sharma</td>
+        <td>9876543210</td>
+        <td>Customer</td>
+        <td>Individual</td>
+        <td>Smart Locks, Mesh WiFi</td>
+        <td>New</td>
+        <td>Hemant Singh</td>
+        <td class="action-btns">
+          <button>Edit</button>
+          <button>Follow-Up</button>
+          <button>Demo</button>
+          <button>Task</button>
+        </td>
+      </tr>
+      <tr>
+        <td>Green Builders</td>
+        <td>8800123456</td>
+        <td>Partner</td>
+        <td>Builder</td>
+        <td>Smart Sensors, Video Door Phones</td>
+        <td>Interested</td>
+        <td>Bhanu Chaudhary</td>
+        <td class="action-btns">
+          <button>Edit</button>
+          <button>Follow-Up</button>
+          <button>Demo</button>
+          <button>Task</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</body>
+</html>

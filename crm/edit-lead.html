@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Edit Lead - Omvix CRM</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg-light: #FFF8F0;
+      --accent-orange: #FF6F40;
+      --accent-red: #E25822;
+      --text-muted: #5A4033;
+      --card-bg: #FFF1E5;
+      --shadow-tint: rgba(255, 111, 64, 0.2);
+      --font-family: 'Inter', sans-serif;
+    }
+
+    body {
+      font-family: var(--font-family);
+      background: var(--bg-light);
+      margin: 0;
+      padding: 24px;
+      color: var(--text-muted);
+    }
+
+    h1 {
+      font-size: 32px;
+      font-weight: 700;
+      margin-bottom: 24px;
+      color: var(--accent-red);
+    }
+
+    form {
+      background: var(--card-bg);
+      padding: 24px;
+      border-radius: 16px;
+      max-width: 800px;
+      margin: auto;
+      box-shadow: 0 4px 20px var(--shadow-tint);
+    }
+
+    .form-group {
+      margin-bottom: 20px;
+    }
+
+    label {
+      display: block;
+      margin-bottom: 6px;
+      font-weight: 500;
+      color: var(--accent-red);
+    }
+
+    input, select, textarea {
+      width: 100%;
+      padding: 12px;
+      border: 1px solid var(--accent-orange);
+      border-radius: 8px;
+      font-size: 14px;
+      background: transparent;
+      color: var(--text-muted);
+    }
+
+    .map-frame {
+      width: 100%;
+      height: 300px;
+      border: none;
+      border-radius: 12px;
+      margin-bottom: 24px;
+    }
+
+    .checkbox-group {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .checkbox-group label {
+      font-weight: 400;
+      color: var(--text-muted);
+      display: flex;
+      align-items: center;
+    }
+
+    .checkbox-group input[type="checkbox"] {
+      margin-right: 6px;
+    }
+
+    .submit-btn {
+      background: var(--accent-orange);
+      color: white;
+      border: none;
+      padding: 14px 24px;
+      border-radius: 10px;
+      font-size: 16px;
+      cursor: pointer;
+    }
+
+    .submit-btn:hover {
+      filter: brightness(1.1);
+    }
+  </style>
+</head>
+<body>
+  <h1>Edit Lead</h1>
+  <form>
+    <div class="form-group">
+      <label for="name">Name</label>
+      <input type="text" id="name" name="name" value="Ravi Sharma">
+    </div>
+    <div class="form-group">
+      <label for="phone">Phone</label>
+      <input type="tel" id="phone" name="phone" value="9876543210">
+    </div>
+    <div class="form-group">
+      <label for="email">Email</label>
+      <input type="email" id="email" name="email" value="ravi@example.com">
+    </div>
+    <div class="form-group">
+      <label for="address">Address</label>
+      <input type="text" id="address" name="address" value="123 Golf Course Road, Gurgaon">
+    </div>
+    <div class="form-group">
+      <label>Location</label>
+      <iframe id="map" class="map-frame" src="https://maps.google.com/maps?q=28.4586,77.1057&z=15&output=embed"></iframe>
+    </div>
+    <div class="form-group">
+      <label for="latitude">Latitude</label>
+      <input type="text" id="latitude" name="latitude" value="28.458600">
+    </div>
+    <div class="form-group">
+      <label for="longitude">Longitude</label>
+      <input type="text" id="longitude" name="longitude" value="77.105700">
+    </div>
+    <div class="form-group">
+      <label for="lead_type">Lead Type</label>
+      <select id="lead_type" name="lead_type">
+        <option selected>Customer</option>
+        <option>Partner</option>
+        <option>Service Provider</option>
+      </select>
+    </div>
+    <div class="form-group">
+      <label for="lead_subtype">Lead Sub-Type</label>
+      <select id="lead_subtype" name="lead_subtype">
+        <option selected>Individual</option>
+        <option>Builder</option>
+        <option>Architect</option>
+        <option>Institution</option>
+        <option>Electrical Contractor</option>
+        <option>Others</option>
+      </select>
+    </div>
+    <div class="form-group">
+      <label>Interested In</label>
+      <div class="checkbox-group">
+        <label><input type="checkbox" checked name="interested_in[]" value="Smart Locks">Smart Locks</label>
+        <label><input type="checkbox" checked name="interested_in[]" value="Mesh WiFi">Mesh WiFi</label>
+        <label><input type="checkbox" name="interested_in[]" value="Smart Curtains">Smart Curtains</label>
+        <label><input type="checkbox" name="interested_in[]" value="Sensors">Sensors</label>
+        <label><input type="checkbox" name="interested_in[]" value="Video Door Bells">Video Door Bells</label>
+        <label><input type="checkbox" name="interested_in[]" value="Electrical Safety Inspection">Electrical Safety Inspection</label>
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="source">Source</label>
+      <select id="source" name="source">
+        <option selected>Website</option>
+        <option>Ad</option>
+        <option>Referral</option>
+        <option>Walk-in</option>
+        <option>Campaign</option>
+        <option>Manual</option>
+      </select>
+    </div>
+    <div class="form-group">
+      <label for="notes">Notes</label>
+      <textarea id="notes" name="notes" rows="3">Inquired via website popup</textarea>
+    </div>
+    <button type="submit" class="submit-btn">Update Lead</button>
+  </form>
+</body>
+</html>

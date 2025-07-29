@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Activity Logs - Omvix CRM</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --bg-light: #FFF8F0;
+      --accent-orange: #FF6F40;
+      --accent-red: #E25822;
+      --text-muted: #5A4033;
+      --card-bg: #FFF1E5;
+      --shadow-tint: rgba(255, 111, 64, 0.2);
+      --font-family: 'Inter', sans-serif;
+    }
+    body {
+      font-family: var(--font-family);
+      background: var(--bg-light);
+      margin: 0;
+      padding: 24px;
+      color: var(--text-muted);
+    }
+    h1 {
+      font-size: 32px;
+      font-weight: 700;
+      margin-bottom: 24px;
+      color: var(--accent-red);
+    }
+    .filters {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 16px;
+      margin-bottom: 24px;
+    }
+    input, select {
+      padding: 10px;
+      border: 1px solid var(--accent-orange);
+      border-radius: 8px;
+      font-size: 14px;
+      background: transparent;
+      color: var(--text-muted);
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+    th, td {
+      border: 1px solid var(--accent-orange);
+      padding: 12px;
+      text-align: left;
+    }
+    th {
+      background: var(--card-bg);
+      color: var(--accent-red);
+    }
+  </style>
+</head>
+<body>
+  <h1>Activity Logs</h1>
+  <div class="filters">
+    <input type="text" placeholder="Search by User or Action" />
+    <input type="date" placeholder="From Date" />
+    <input type="date" placeholder="To Date" />
+  </div>
+  <table>
+    <thead>
+      <tr>
+        <th>Timestamp</th>
+        <th>User</th>
+        <th>Action</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>2025-07-29 09:43 AM</td>
+        <td>Hemant S.</td>
+        <td>Updated Lead #12: Status changed from New → Interested</td>
+      </tr>
+      <tr>
+        <td>2025-07-29 10:21 AM</td>
+        <td>Bhanu C.</td>
+        <td>Updated location: (28.4310, 77.1050) → (28.4769, 77.1215)</td>
+      </tr>
+      <tr>
+        <td>2025-07-29 11:00 AM</td>
+        <td>Ravi M.</td>
+        <td>Marked follow-up for Lead #7 as Done: Not Interested</td>
+      </tr>
+      <tr>
+        <td>2025-07-29 11:42 AM</td>
+        <td>Admin</td>
+        <td>Created Task #19: Share brochure with architect, assigned to Lokesh</td>
+      </tr>
+    </tbody>
+  </table>
+</body>
+</html>
