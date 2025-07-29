@@ -1,3 +1,4 @@
+<?php include '../includes/config.php'; ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -5,87 +6,16 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Lead List - Omvix CRM</title>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-  <style>
-    :root {
-      --bg-light: #FFF8F0;
-      --accent-orange: #FF6F40;
-      --accent-red: #E25822;
-      --text-muted: #5A4033;
-      --card-bg: #FFF1E5;
-      --shadow-tint: rgba(255, 111, 64, 0.2);
-      --font-family: 'Inter', sans-serif;
-    }
-
-    body {
-      font-family: var(--font-family);
-      background: var(--bg-light);
-      margin: 0;
-      padding: 24px;
-      color: var(--text-muted);
-    }
-
-    h1 {
-      font-size: 32px;
-      font-weight: 700;
-      margin-bottom: 24px;
-      color: var(--accent-red);
-    }
-
-    .filters {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 16px;
-      margin-bottom: 24px;
-    }
-
-    input, select {
-      padding: 10px;
-      border: 1px solid var(--accent-orange);
-      border-radius: 8px;
-      font-size: 14px;
-      background: transparent;
-      color: var(--text-muted);
-    }
-
-    table {
-      width: 100%;
-      border-collapse: collapse;
-      margin-top: 16px;
-    }
-
-    th, td {
-      border: 1px solid var(--accent-orange);
-      padding: 12px;
-      text-align: left;
-    }
-
-    th {
-      background: var(--card-bg);
-      color: var(--accent-red);
-    }
-
-    .action-btns button {
-      background: var(--accent-orange);
-      color: white;
-      border: none;
-      padding: 8px 12px;
-      margin-right: 6px;
-      border-radius: 6px;
-      cursor: pointer;
-      font-size: 13px;
-    }
-
-    .action-btns button:hover {
-      filter: brightness(1.1);
-    }
-  </style>
+  <link rel="stylesheet" href="<?= $BASE_URL ?>assets/style.css">
 </head>
-<body>
-  <h1>Lead List</h1>
+<body class="sidebar-layout">
+<div id="nav-container"></div>
+<div class="main-content">
+  <h2 class="page-title">Lead List</h2>
 
-  <div class="filters">
-    <input type="text" placeholder="Search name/email/phone...">
-    <select>
+  <div class="filter-bar">
+    <input type="text" class="search-input" placeholder="Search name/email/phone...">
+    <select class="filter-select">
       <option>Status</option>
       <option>New</option>
       <option>Contacted</option>
@@ -93,13 +23,13 @@
       <option>Converted</option>
       <option>Dropped</option>
     </select>
-    <select>
+    <select class="filter-select">
       <option>Type</option>
       <option>Customer</option>
       <option>Partner</option>
       <option>Service Provider</option>
     </select>
-    <select>
+    <select class="filter-select">
       <option>Sub-Type</option>
       <option>Individual</option>
       <option>Builder</option>
@@ -107,7 +37,7 @@
       <option>Institution</option>
       <option>Electrical Contractor</option>
     </select>
-    <select>
+    <select class="filter-select">
       <option>Source</option>
       <option>Website</option>
       <option>Ad</option>
@@ -164,5 +94,8 @@
       </tr>
     </tbody>
   </table>
+</div>
+<script src="<?= $BASE_URL ?>assets/nav.js"></script>
 </body>
 </html>
+
