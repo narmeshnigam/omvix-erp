@@ -1,3 +1,4 @@
+<?php include '../includes/config.php'; ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -5,104 +6,12 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>CRM Dashboard - Omvix</title>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-  <style>
-    :root {
-      --bg-light: #FFF8F0;
-      --accent-orange: #FF6F40;
-      --accent-red: #E25822;
-      --text-muted: #5A4033;
-      --card-bg: #FFF1E5;
-      --shadow-tint: rgba(255, 111, 64, 0.2);
-      --font-family: 'Inter', sans-serif;
-    }
-
-    body {
-      font-family: var(--font-family);
-      background: var(--bg-light);
-      margin: 0;
-      padding: 24px;
-      color: var(--text-muted);
-    }
-
-    h1 {
-      font-size: 32px;
-      font-weight: 700;
-      color: var(--accent-red);
-      margin-bottom: 24px;
-    }
-
-    nav {
-      display: flex;
-      gap: 16px;
-      margin-bottom: 24px;
-    }
-
-    nav a {
-      text-decoration: none;
-      color: var(--accent-orange);
-      font-weight: 600;
-      padding: 8px 16px;
-      background: var(--card-bg);
-      border-radius: 8px;
-      box-shadow: 0 2px 6px var(--shadow-tint);
-    }
-
-    nav a:hover {
-      filter: brightness(1.1);
-    }
-
-    .grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-      gap: 24px;
-      margin-bottom: 48px;
-    }
-
-    .card {
-      background: var(--card-bg);
-      padding: 24px;
-      border-radius: 16px;
-      box-shadow: 0 4px 20px var(--shadow-tint);
-      text-align: center;
-    }
-
-    .card h2 {
-      font-size: 28px;
-      color: var(--accent-orange);
-    }
-
-    .card p {
-      font-size: 16px;
-      color: var(--text-muted);
-    }
-
-    .section-title {
-      font-size: 22px;
-      font-weight: 600;
-      margin-bottom: 12px;
-      color: var(--accent-red);
-    }
-
-    table {
-      width: 100%;
-      border-collapse: collapse;
-      margin-bottom: 32px;
-    }
-
-    th, td {
-      border: 1px solid var(--accent-orange);
-      padding: 10px;
-      text-align: left;
-      font-size: 14px;
-    }
-
-    th {
-      background: var(--card-bg);
-      color: var(--accent-red);
-    }
-  </style>
+  <link rel="stylesheet" href="<?= $BASE_URL ?>assets/style.css">
 </head>
-<body>
+<body class="sidebar-layout">
+<div id="nav-container"></div>
+<div class="main-content">
+  <h2 class="page-title">CRM Dashboard</h2>
   <h1>CRM Dashboard</h1>
 
   <nav>
@@ -191,5 +100,8 @@
       </tr>
     </table>
   </div>
+</div>
+<script src="<?= $BASE_URL ?>assets/nav.js"></script>
 </body>
 </html>
+

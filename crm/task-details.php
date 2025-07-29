@@ -1,3 +1,4 @@
+<?php include '../includes/config.php'; ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -5,69 +6,12 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Task Details - Omvix CRM</title>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
-  <style>
-    :root {
-      --bg-light: #FFF8F0;
-      --accent-orange: #FF6F40;
-      --accent-red: #E25822;
-      --text-muted: #5A4033;
-      --card-bg: #FFF1E5;
-      --shadow-tint: rgba(255, 111, 64, 0.2);
-      --font-family: 'Inter', sans-serif;
-    }
-    body {
-      font-family: var(--font-family);
-      background: var(--bg-light);
-      margin: 0;
-      padding: 24px;
-      color: var(--text-muted);
-    }
-    h1 {
-      font-size: 28px;
-      font-weight: 700;
-      margin-bottom: 20px;
-      color: var(--accent-red);
-    }
-    .section {
-      background: var(--card-bg);
-      padding: 24px;
-      border-radius: 12px;
-      margin-bottom: 32px;
-      box-shadow: 0 4px 16px var(--shadow-tint);
-    }
-    .info-item {
-      margin-bottom: 14px;
-    }
-    .info-item label {
-      font-weight: 600;
-      color: var(--accent-red);
-      display: block;
-    }
-    textarea, select, input[type="datetime-local"] {
-      width: 100%;
-      padding: 10px;
-      border: 1px solid var(--accent-orange);
-      border-radius: 8px;
-      background: transparent;
-      color: var(--text-muted);
-      margin-bottom: 16px;
-    }
-    .btn {
-      background: var(--accent-orange);
-      color: white;
-      padding: 12px 20px;
-      border: none;
-      border-radius: 8px;
-      font-size: 14px;
-      cursor: pointer;
-    }
-    .btn:hover {
-      filter: brightness(1.1);
-    }
-  </style>
+  <link rel="stylesheet" href="<?= $BASE_URL ?>assets/style.css">
 </head>
-<body>
-  <h1>Task Details</h1>
+<body class="sidebar-layout">
+<div id="nav-container"></div>
+<div class="main-content">
+  <h2 class="page-title">Task Details</h2>
 
   <div class="section">
     <div class="info-item">
@@ -141,5 +85,8 @@
       document.getElementById('next-fields').style.display = val === 'yes' ? 'block' : 'none';
     }
   </script>
+</div>
+<script src="<?= $BASE_URL ?>assets/nav.js"></script>
 </body>
 </html>
+

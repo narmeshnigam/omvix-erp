@@ -1,3 +1,4 @@
+<?php include '../includes/config.php'; ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -5,100 +6,12 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Lead Details - Omvix CRM</title>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
-  <style>
-    :root {
-      --bg-light: #FFF8F0;
-      --accent-orange: #FF6F40;
-      --accent-red: #E25822;
-      --text-muted: #5A4033;
-      --card-bg: #FFF1E5;
-      --shadow-tint: rgba(255, 111, 64, 0.2);
-      --font-family: 'Inter', sans-serif;
-    }
-
-    body {
-      font-family: var(--font-family);
-      background: var(--bg-light);
-      margin: 0;
-      padding: 24px;
-      color: var(--text-muted);
-    }
-
-    h1 {
-      font-size: 32px;
-      font-weight: 700;
-      margin-bottom: 16px;
-      color: var(--accent-red);
-    }
-
-    .section {
-      background: var(--card-bg);
-      border-radius: 12px;
-      padding: 24px;
-      margin-bottom: 32px;
-      box-shadow: 0 4px 16px var(--shadow-tint);
-    }
-
-    h2 {
-      font-size: 22px;
-      color: var(--accent-orange);
-      margin-bottom: 12px;
-    }
-
-    table {
-      width: 100%;
-      border-collapse: collapse;
-      margin-top: 12px;
-    }
-
-    th, td {
-      border: 1px solid var(--accent-orange);
-      padding: 10px;
-      text-align: left;
-    }
-
-    th {
-      background: var(--card-bg);
-      color: var(--accent-red);
-    }
-
-    .btn-group {
-      margin-top: 16px;
-    }
-
-    .btn {
-      background: var(--accent-orange);
-      color: #fff;
-      border: none;
-      padding: 10px 16px;
-      border-radius: 8px;
-      margin-right: 10px;
-      cursor: pointer;
-    }
-
-    .btn:hover {
-      filter: brightness(1.1);
-    }
-
-    .info-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 16px;
-    }
-
-    .info-item {
-      margin-bottom: 12px;
-    }
-
-    .info-item label {
-      font-weight: 600;
-      display: block;
-      color: var(--accent-red);
-    }
-  </style>
+  <link rel="stylesheet" href="<?= $BASE_URL ?>assets/style.css">
 </head>
-<body>
-  <h1>Lead Details</h1>
+<body class="sidebar-layout">
+<div id="nav-container"></div>
+<div class="main-content">
+  <h2 class="page-title">Lead Details</h2>
 
   <div class="section">
     <h2>Basic Information</h2>
@@ -222,5 +135,8 @@
       <button class="btn">Add Task</button>
     </div>
   </div>
+</div>
+<script src="<?= $BASE_URL ?>assets/nav.js"></script>
 </body>
 </html>
+

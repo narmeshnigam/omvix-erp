@@ -1,3 +1,4 @@
+<?php include '../includes/config.php'; ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -5,91 +6,12 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Add Lead - Omvix CRM</title>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-  <style>
-    :root {
-      --bg-light: #FFF8F0;
-      --accent-orange: #FF6F40;
-      --accent-red: #E25822;
-      --text-muted: #5A4033;
-      --card-bg: #FFF1E5;
-      --shadow-tint: rgba(255, 111, 64, 0.2);
-      --font-family: 'Inter', sans-serif;
-    }
-
-    body {
-      font-family: var(--font-family);
-      background: var(--bg-light);
-      margin: 0;
-      padding: 24px;
-      color: var(--text-muted);
-    }
-
-    h1 {
-      font-size: 32px;
-      font-weight: 700;
-      margin-bottom: 24px;
-      color: var(--accent-red);
-    }
-
-    form {
-      background: var(--card-bg);
-      padding: 24px;
-      border-radius: 16px;
-      max-width: 800px;
-      margin: auto;
-      box-shadow: 0 4px 20px var(--shadow-tint);
-    }
-
-    .form-group {
-      margin-bottom: 20px;
-    }
-
-    label {
-      display: block;
-      margin-bottom: 6px;
-      font-weight: 500;
-      color: var(--accent-red);
-    }
-
-    input, select, textarea {
-      width: 100%;
-      padding: 12px;
-      border: 1px solid var(--accent-orange);
-      border-radius: 8px;
-      font-size: 14px;
-      background: transparent;
-      color: var(--text-muted);
-    }
-
-    textarea {
-      resize: vertical;
-    }
-
-    .map-frame {
-      width: 100%;
-      height: 300px;
-      border: none;
-      border-radius: 12px;
-      margin-bottom: 24px;
-    }
-
-    .submit-btn {
-      background: var(--accent-orange);
-      color: white;
-      border: none;
-      padding: 14px 24px;
-      border-radius: 10px;
-      font-size: 16px;
-      cursor: pointer;
-    }
-
-    .submit-btn:hover {
-      filter: brightness(1.1);
-    }
-  </style>
+  <link rel="stylesheet" href="<?= $BASE_URL ?>assets/style.css">
 </head>
-<body>
-  <h1>Add New Lead</h1>
+<body class="sidebar-layout">
+<div id="nav-container"></div>
+<div class="main-content">
+  <h2 class="page-title">Add New Lead</h2>
   <form>
     <div class="form-group">
       <label for="name">Name</label>
@@ -174,5 +96,8 @@
       }
     };
   </script>
+</div>
+<script src="<?= $BASE_URL ?>assets/nav.js"></script>
 </body>
 </html>
+
