@@ -1,4 +1,3 @@
-<?php include '../includes/config.php'; ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -6,12 +5,60 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Activity Logs - Omvix CRM</title>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="<?= $BASE_URL ?>assets/style.css">
+  <style>
+    :root {
+      --bg-light: #FFF8F0;
+      --accent-orange: #FF6F40;
+      --accent-red: #E25822;
+      --text-muted: #5A4033;
+      --card-bg: #FFF1E5;
+      --shadow-tint: rgba(255, 111, 64, 0.2);
+      --font-family: 'Inter', sans-serif;
+    }
+    body {
+      font-family: var(--font-family);
+      background: var(--bg-light);
+      margin: 0;
+      padding: 24px;
+      color: var(--text-muted);
+    }
+    h1 {
+      font-size: 32px;
+      font-weight: 700;
+      margin-bottom: 24px;
+      color: var(--accent-red);
+    }
+    .filters {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 16px;
+      margin-bottom: 24px;
+    }
+    input, select {
+      padding: 10px;
+      border: 1px solid var(--accent-orange);
+      border-radius: 8px;
+      font-size: 14px;
+      background: transparent;
+      color: var(--text-muted);
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+    th, td {
+      border: 1px solid var(--accent-orange);
+      padding: 12px;
+      text-align: left;
+    }
+    th {
+      background: var(--card-bg);
+      color: var(--accent-red);
+    }
+  </style>
 </head>
-<body class="sidebar-layout">
-<div id="nav-container"></div>
-<div class="main-content">
-  <h2 class="page-title">Activity Logs</h2>
+<body>
+  <h1>Activity Logs</h1>
   <div class="filters">
     <input type="text" placeholder="Search by User or Action" />
     <input type="date" placeholder="From Date" />
@@ -48,8 +95,5 @@
       </tr>
     </tbody>
   </table>
-</div>
-<script src="<?= $BASE_URL ?>assets/nav.js"></script>
 </body>
 </html>
-

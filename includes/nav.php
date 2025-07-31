@@ -12,7 +12,7 @@
       <a href="<?= $BASE_URL ?>dashboard.php">Dashboard</a>
       <a href="<?= $BASE_URL ?>change_password.php">Change Password</a>
       <a href="<?= $BASE_URL ?>employee/list.php">Employees</a>
-      <a href="<?= $BASE_URL ?>crm/dashboard.php">CRM</a>
+      <a href="<?= $BASE_URL ?>crm/dashboard.html">CRM</a>
       <!-- Add more module links here -->
     </nav>
   </div>
